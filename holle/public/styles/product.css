@@ -1,0 +1,103 @@
+.productcontent {
+    width: 80vw;
+    margin-left: 10vw;
+}
+
+.userinfo {
+    display: flex;
+    text-decoration: none;
+}
+
+.userinfo p {
+    color: black;
+    font-size: 20px;
+    font-weight: bolder;
+    padding-top: 20px;
+}
+
+.profilepicture {
+    border-radius: 100px;
+    width: 70px;
+    height: 70px;
+}
+
+.middle {
+    display: flex;
+    width: 100%;
+}
+
+.images {
+    display: flex;
+    width: 50vw;
+    gap: 10px;
+}
+
+.images #mainimage {
+    object-fit: cover;
+    border-radius: 25px;
+    height: 400px;
+    max-width: 600px;
+}
+
+.images .secondaryimages {
+    width: 60px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    direction: rtl;
+    scrollbar-color: #9749ff #e3cfff;
+    scrollbar-width: thin;
+}
+
+.images .secondaryimages img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.images .secondaryvideo {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.images .secondaryvideo img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.checkout {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    right: 10vw;
+}
+
+.checkout div {
+    width: 90%;
+    padding: 30px;
+    background-color: #e3cfff;
+    border-radius: 5px;
+}
+
+.checkout div button {
+    width: 100%;
+}
+
+.contactme {
+    background-color: transparent;
+    border: 3px solid #e3cfff;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 20px;
+}
