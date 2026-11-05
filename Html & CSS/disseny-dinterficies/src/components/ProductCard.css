@@ -1,0 +1,190 @@
+.product-card {
+    /* 1. Apliquem Grid al contenidor principal */
+    display: grid;
+    
+    /* 2. Definim dues columnes: 250px per la imatge, 1fr per la info */
+    grid-template-columns: 250px 1fr; 
+    
+    /* Estil estètic bàsic */
+    max-width: 750px; 
+    margin: 40px auto;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+}
+/* 3. Estructura interna de la columna d'informació (Grid Vertical) */
+.product-info {
+    padding: 20px;
+    display: grid; 
+    /* Utilitzem Grid per gestionar l'apilament i espaiament vertical */
+    grid-template-rows: auto auto 1fr auto; 
+    gap: 15px; 
+}
+/* Opcional: Assegurar que la imatge ompli la seva cel·la */
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Preservació de la ràtio d'aspecte */
+    display: block;
+}
+/* Utilitzem Flexbox o Grid per moure el botó al final de l'espai */
+.add-to-cart-btn {
+    align-self: end; /* Fixa el botó al fons de la seva cel·la */
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.product-price-section {
+    /* 1. Apliquem Flexbox per alinear horitzontalment */
+    display: flex;
+    align-items: center; /* Centrem verticalment */
+    gap: 15px; /* Espaiat entre els preus */
+}
+/* 2. Estil del preu actual (el gran) */
+.current-price {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #cc0000; /* Color destacat per a l'oferta */
+}
+/* 3. Estil del preu antic (ratllat) */
+.old-price {
+    font-size: 1em;
+    color: #666;
+    text-decoration: line-through; /* Text ratllat */
+}
+/* Estil del títol i descripció per millorar la presentació */
+.product-title {
+    font-size: 1.5em;
+    margin-top: 0;
+}
+.product-description {
+    color: #444;
+}
+/* 1. Media Query per a vista de Mòbil (amplada màxima de 600px) */
+@media (max-width: 600px) {
+    
+    /* Modificació del contenidor principal */
+   .product-card {
+        /* 2. Canviem el Grid a una sola columna (la imatge i la info s'apilen) */
+        grid-template-columns: 1fr; 
+        max-width: 100%; /* Ocupa tota l'amplada de la pantalla */
+        margin: 0; /* Eliminar marges en mòbil */
+        border-radius: 0;
+    }
+ 
+    /* Ajustar l'àrea d'informació en mòbil */
+   .product-info {
+        padding: 15px;
+    }
+ 
+    /* Opcional: Ajustar la distribució de preus en mòbil */
+   .product-price-section {
+        justify-content: space-between; 
+    }
+}
+/* Contenidor base */
+.product-card {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  max-width: 750px;
+  margin: 40px auto;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+}
+ 
+/* 3) Modificador BEM per a producte esgotat */
+.product-card--sold-out {
+  filter: grayscale(100%);
+}
+ 
+/* Estructura interna */
+.product-info {
+  padding: 20px;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 15px;
+}
+ 
+/* Imatge */
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+ 
+/* Botó base */
+.add-to-cart-btn {
+  align-self: end;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+ 
+/* 3) Estil del botó quan el component estigui esgotat
+      (aplicant-se via [disabled] i també dins del contenidor modificat) */
+.product-card--sold-out .add-to-cart-btn,
+.add-to-cart-btn[disabled] {
+  background-color: #bbb;
+  color: #eee;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+ 
+/* Preus (Flex) */
+.product-price-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+ 
+.current-price {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #cc0000;
+}
+ 
+.old-price {
+  font-size: 1em;
+  color: #666;
+  text-decoration: line-through;
+}
+ 
+/* Textos */
+.product-title {
+  font-size: 1.5em;
+  margin-top: 0;
+}
+ 
+.product-description {
+  color: #444;
+}
+ 
+/* Responsiu */
+@media (max-width: 600px) {
+  .product-card {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+ 
+  .product-info {
+    padding: 15px;
+  }
+ 
+  .product-price-section {
+    justify-content: space-between;
+  }
+}
